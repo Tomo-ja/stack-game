@@ -10,7 +10,12 @@ export default function blockMove(box, boxWidth, speed){
 	box.posX = box.offsetLeft;
 	box.velX = SPEED;
 	box.move = true; 
-	setInterval(gameLoop,33);
+	let timerId = setInterval(()=>{
+		gameLoop()
+		if (keyPressed){
+			clearInterval(timerId)
+		}
+	},33);
 	}
 
 	// stop a box moving by press "S"
@@ -27,19 +32,15 @@ export default function blockMove(box, boxWidth, speed){
 	function gameLoop() {
 	handleInput()
 	moveBox()
+	console.log(box.id)
 	}
 
 	// when "S" is pressed, if box is moving, then stop them. if box is stopping, then move them
 	// and finish one time pressed event by setting keyPressed = false
 	function handleInput() {
-	if( keyPressed ) {
-		if (box.move == true) {
-		box.move = false;
-		} else {
-		box.move = true;
+		if( keyPressed && box.move) {
+			box.move = false;
 		}
-		keyPressed = false;
-	}
 	}
 
 	function moveBox() {

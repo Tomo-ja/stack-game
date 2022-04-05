@@ -1,20 +1,18 @@
 import blockMove from "./functions/blockMove.js";
+import addBlock from "./functions/addBlock.js";
 
 const testBtn = document.getElementById("btn")
 const parentTest = document.getElementById("game_region")
 
 let counter = 1
+let prevBlock = document.getElementById("box-0")
+
 
 testBtn.addEventListener('click', ()=>{
-	const newBlock = document.createElement("div")
-	newBlock.classList.add("box")
-	newBlock.setAttribute("id", `box-${counter}`)
-	const prevBlock = document.getElementById(`box-${counter - 1}`)
-	parentTest.insertBefore(newBlock, prevBlock)
+	prevBlock = addBlock(counter, prevBlock, parentTest)
+	blockMove(prevBlock, 48, 5)
 	counter ++
 })
 
 
-const box = document.getElementById("box-0")
 
-blockMove(box, 48, 5)
