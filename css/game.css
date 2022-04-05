@@ -2,14 +2,13 @@
   width: 600px;
   height: 400px;
   background-color: black;
-  position: relative;
+  padding-top: 280px;
 }
 
 .box {
   width: 48px;
   height: 48px;
   background-color: white;
-  position: absolute;
+  position: relative;
   left: 280px;
-  top: 180px;
 }
