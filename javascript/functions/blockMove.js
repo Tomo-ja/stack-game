@@ -1,4 +1,4 @@
-export default function blockMove(box, boxWidth, speed){
+export default async function  blockMove(box, boxWidth, speed){
 	// init set up
 	const  MAX_BOX_X = 600 - boxWidth;
 	let keyPressed = false;
@@ -9,10 +9,10 @@ export default function blockMove(box, boxWidth, speed){
 	box.move = true; 
 
 
-	// make box move then once stop, see the final position of the box
-	const data = init()
-	data.then(function(data){
-		console.log(data);
+	// make box move then once stop, return the final position of the box
+	const data = await init()
+	return new Promise(resolve=>{
+		resolve(data)
 	})
 
 	// set stop box function, init position, make a loop

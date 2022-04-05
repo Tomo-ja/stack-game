@@ -1,5 +1,6 @@
 import blockMove from "./functions/blockMove.js";
 import addBlock from "./functions/addBlock.js";
+import resizeBlock from "./functions/resizeBlock.js";
 
 const testBtn = document.getElementById("btn")
 const parentTest = document.getElementById("game_region")
@@ -7,16 +8,28 @@ const parentTest = document.getElementById("game_region")
 let counter = 1
 let prevBlock = document.getElementById("box-0")
 
-const range = {"leftLimit": 280, "rightLimit": 328}
+let range = {"leftLimit": 280, "rightLimit": 328}
+let newBlockWidth = 48
 
 
 testBtn.addEventListener('click', ()=>{
-	prevBlock = addBlock(counter, prevBlock, parentTest)
-	// console.log(prevBlock.clientWidth)
-	console.log(prevBlock.getBoundingClientRect())
-	blockMove(prevBlock, 48, 5)
-	counter ++
+	let currentBlock = addBlock(counter, newBlockWidth, prevBlock, parentTest)
+	let fixBlockInfo = blockMove(currentBlock, 48, 5)
+	fixBlockInfo.then(res => {
+		range = resizeBlock(res, currentBlock, range)
+		newBlockWidth = currentBlock.offsetWidth
+		prevBlock = currentBlock
+		showResult(range)
+		counter ++
+	})
 })
 
+const showResult = (range) => {
+	if (range){
+		return
+	}else{
+		console.log("done")
+	}
+}
 
 
