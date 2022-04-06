@@ -2,16 +2,16 @@ import blockMove from "./functions/blockMove.js";
 import addBlock from "./functions/addBlock.js";
 import resizeBlock from "./functions/resizeBlock.js";
 
+const appMarginLeft = document.getElementById("app").getBoundingClientRect().left
 const testBtn = document.getElementById("btn")
 const parentTest = document.getElementById("game_region")
 
 
 let counter = 1
 let prevBlock = document.getElementById("box-0")
-console.log(prevBlock.getBoundingClientRect())
 
-let range = {"leftLimit": 180, "rightLimit": 228}
-let newBlockWidth = 48
+let range = {"leftLimit": 295, "rightLimit": 355}
+let newBlockWidth = 60
 
 testBtn.addEventListener('click', ()=>{
 	game()
@@ -30,10 +30,10 @@ let game = async()=>{
 function gameLoop (){
 	return new Promise(resolve=>{
 		let currentBlock = addBlock(counter, newBlockWidth, prevBlock, parentTest)
-		let fixBlockInfo = blockMove(currentBlock, 5)
+		let fixBlockInfo = blockMove(currentBlock, counter)
 		parentTest.style.backgroundPosition = `left 0px bottom -${counter * 50}px`
 		fixBlockInfo.then(res => {
-			range = resizeBlock(res, currentBlock, range)
+			range = resizeBlock(res, currentBlock, range, appMarginLeft)
 			newBlockWidth = currentBlock.offsetWidth
 			prevBlock = currentBlock
 			let gameOver = showResult(range)

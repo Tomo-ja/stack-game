@@ -1,0 +1,87 @@
+.icon-image {
+}
+
+.header {
+}
+.header_question-mark {
+}
+.info {
+}
+.info_close {
+}
+.info_close_icon {
+}
+.info_title {
+}
+.info_section {
+}
+.info_success {
+}
+.info_section_images {
+}
+.info_fail {
+}
+
+.main {
+  perspective: 500px;
+}
+.box {
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: turnInfinite 10s linear 0s infinite normal none running;
+}
+@keyframes turnInfinite {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+.box_face {
+  position: absolute;
+  width: 198px;
+  height: 198px;
+  background-color: rgba(100, 100, 100, 0.7);
+  border: 0.5px solid black;
+  cursor: pointer;
+}
+.box_face:hover {
+  background-color: rgba(200, 200, 200, 0.7);
+}
+
+.box_face_text {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 40px;
+  color: white;
+}
+.box_face:hover > .box_face_text {
+  color: black;
+  font-weight: bold;
+}
+
+/* rotateXは前後に回転。rotateYは左右に回転 */
+/* translateXは左右にtranslateYは上下に基準の位置から移動させる */
+.box_face-top {
+  transform: translateY(100px) rotateX(-90deg);
+}
+.box_face-bottom {
+  transform: translateY(-100px) rotateX(90deg);
+}
+.box_face-front {
+  transform: translateZ(100px);
+}
+.box_face-back {
+  transform: translateZ(-100px) rotateX(180deg);
+}
+.box_face-right {
+  transform: translateX(100px) rotateY(90deg);
+}
+.box_face-left {
+  transform: translateX(-100px) rotateY(-90deg);
+}
