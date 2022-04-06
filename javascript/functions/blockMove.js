@@ -1,6 +1,6 @@
 export default async function blockMove(box, speed){
 	// init set up
-	const  MAX_BOX_X = 600 - box.offsetWidth;
+	const  MAX_BOX_X = 400 - box.offsetWidth;
 	let keyPressed = false;
 	let SPEED = speed;
 	document.onkeydown = keyDown;
@@ -19,7 +19,7 @@ export default async function blockMove(box, speed){
 	function init() {
 		return new Promise(resolve =>{
 			let timerId = setInterval(()=>{
-				gameLoop()
+				moveLoop()
 				if (keyPressed){
 					resolve(box.getBoundingClientRect())
 					clearInterval(timerId)
@@ -39,7 +39,7 @@ export default async function blockMove(box, speed){
 	}
 
 	// loop function. even though box stop moving, loop is still working behind
-	function gameLoop() {
+	function moveLoop() {
 		handleInput()
 		moveBox()
 	}
