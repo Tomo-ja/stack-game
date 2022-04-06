@@ -13,8 +13,10 @@ let newBlockWidth = 48
 
 
 testBtn.addEventListener('click', ()=>{
+
 	let currentBlock = addBlock(counter, newBlockWidth, prevBlock, parentTest)
 	let fixBlockInfo = blockMove(currentBlock, 48, 5)
+	parentTest.style.backgroundPosition = `left 0px bottom -${counter * 50}px`
 	fixBlockInfo.then(res => {
 		range = resizeBlock(res, currentBlock, range)
 		newBlockWidth = currentBlock.offsetWidth

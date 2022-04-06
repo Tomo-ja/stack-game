@@ -1,8 +1,12 @@
 #game_region {
   width: 600px;
   height: 400px;
-  background-color: black;
+  background-image: url(../images/bg_game_ground-to-sky.jpeg);
+  background-size: 120% 300%;
+  background-position: left 0 bottom 0;
   padding-top: 280px;
+  overflow: hidden;
+  transition: 0.5s;
 }
 
 .box {
