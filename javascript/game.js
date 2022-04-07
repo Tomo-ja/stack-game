@@ -16,7 +16,20 @@ let counter = 1
 let range = {"leftLimit": 225, "rightLimit": 425}
 let newBlockWidth = 200
 
-let colorPicker = 0
+
+const checkColorIndex = (index) => {
+	if(index < colorData.length){
+		return index
+	}else if (index == colorData.length){
+		colorPicker = 0
+		return 0
+	}
+}
+
+let colorPicker = Math.floor(Math.random() * colorData.length)
+let color = checkColorIndex(colorPicker)
+$prevBlock.style.backgroundColor = colorData[color]
+colorPicker ++
 
 let game = async()=>{
 	let isGameOver = await gameLoop()
@@ -59,14 +72,6 @@ const showResult = (range) => {
 	}
 }
 
-const checkColorIndex = (index) => {
-	if(index < colorData.length){
-		return index
-	}else if (index == colorData.length){
-		colorPicker = 0
-		return 0
-	}
-}
 
-// game()
+game()
 displayObject($app)
