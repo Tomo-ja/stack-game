@@ -1,8 +1,8 @@
 
 export default function displayObject (app){
 	let counter = 1
-	const speedOption = [4, 6, 8, 10, 12, 14, 16, 18, 20]
-	const dropStartPosition = [10, 70, 130, 180, 220, 260, 280, 300, 320, 340, 380, 420, 480, 540, 600]
+	const speedOption = [5,6,8, 10, 12, 14, 16, 18, 20]
+	const dropStartPosition = [0, 50, 100, 150, 200, 250, 275, 300, 325, 350, 400, 450, 520, 570]
 
 	setInterval(()=>{
 		const color = Math.round(Math.random())
@@ -30,7 +30,7 @@ export default function displayObject (app){
 		objectElement.style.left = `${dropPosition}px`
 
 		app.appendChild(objectElement)
-	}, 500)
+	}, 300)
 	
 }
 

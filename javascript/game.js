@@ -74,4 +74,6 @@ const showResult = (range) => {
 
 
 game()
-displayObject($app)
+if (mode === "hard"){
+	displayObject($app)
+}

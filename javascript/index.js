@@ -19,8 +19,8 @@ $boxFaces.forEach($face => {
 	$face.addEventListener("click", (e)=>{
 		const mode = checkMode(e.target)
 		localStorage.setItem("mode", mode)
-		window.open("../view/game.html", "_self")
-		// window.open("https://tomo-ja.github.io/stack-game/view/game.html", "_self")
+		// window.open("../view/game.html", "_self")
+		window.open("https://tomo-ja.github.io/stack-game/view/game.html", "_self")
 	})
 })
 const checkMode = (clickedFace) =>{
