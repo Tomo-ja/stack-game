@@ -6,17 +6,15 @@ import { colorData } from "./data/color.js";
 const mode = localStorage.getItem("mode")
 const bestScore = localStorage.getItem(`bestScore${mode}`)? parseInt(localStorage.getItem(`bestScore${mode}`)): 0
 
-
 const appMarginLeft = document.getElementById("app").getBoundingClientRect().left
 const parentTest = document.getElementById("game_field")
-let counter = 1
 let prevBlock = document.getElementById("box-0")
 
+let counter = 1
 let range = {"leftLimit": 225, "rightLimit": 425}
 let newBlockWidth = 200
 
-let colorCounter = 0
-
+let colorPicker = 0
 
 let game = async()=>{
 	let isGameOver = await gameLoop()
@@ -34,9 +32,10 @@ let game = async()=>{
 
 function gameLoop (){
 	return new Promise(resolve=>{
-		let colorIndex = checkColorIndex(colorCounter)
+		let colorIndex = checkColorIndex(colorPicker)
 		let currentBlock = addBlock(counter,colorData[colorIndex], newBlockWidth, prevBlock, parentTest)
-		let fixBlockInfo = blockMove(currentBlock, counter)
+		
+		let fixBlockInfo = blockMove(currentBlock, mode != "easy" && counter)
 		parentTest.style.backgroundPosition = `left 0px bottom -${counter * 50}px`
 		fixBlockInfo.then(res => {
 			range = resizeBlock(res, currentBlock, range, appMarginLeft)
@@ -44,7 +43,7 @@ function gameLoop (){
 			prevBlock = currentBlock
 			let gameOver = showResult(range)
 			counter ++
-			colorCounter ++
+			colorPicker ++
 			resolve (gameOver)
 		})
 	})
@@ -62,10 +61,9 @@ const checkColorIndex = (index) => {
 	if(index < colorData.length){
 		return index
 	}else if (index == colorData.length){
-		colorCounter = 0
+		colorPicker = 0
 		return 0
 	}
 }
-
 
 game()

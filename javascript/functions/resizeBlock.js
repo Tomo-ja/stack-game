@@ -2,7 +2,6 @@ export default function resizeBlock(info, block, range, appMarginLeft){
 	//get X position and width of block
 	let {x, width} = info
 	x = x - appMarginLeft
-	console.log(x)
 
 	let difference = x - range.leftLimit
 	let gameOver = false

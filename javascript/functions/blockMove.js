@@ -1,12 +1,12 @@
-export default async function blockMove(box, speed){
+export default async function blockMove(box, speed=0){
 	// init set up
 	const  MAX_BOX_X = 650 - box.offsetWidth;
 	let keyPressed = false;
 	let SPEED = speed;
 	document.onkeydown = keyDown;
 	box.posX = box.offsetLeft;
-	// box.velX = 5 + (SPEED );
-	box.velX = 4;
+	box.velX = 5 + (Math.round(SPEED / 5));
+	console.log(box.velX)
 	box.move = true; 
 
 
