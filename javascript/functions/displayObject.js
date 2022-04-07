@@ -3,7 +3,7 @@ export default function displayObject (app){
 
 	const objectElement = document.createElement("img")
 
-	objectElement.src = `../../images/icon_object_${counter}.svg`
+	objectElement.src = `../images/icon_object_${counter}.svg`
 	objectElement.classList.add("object")
 
 	app.appendChild(objectElement)
