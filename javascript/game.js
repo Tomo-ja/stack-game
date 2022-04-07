@@ -2,7 +2,9 @@ import blockMove from "./functions/blockMove.js";
 import addBlock from "./functions/addBlock.js";
 import resizeBlock from "./functions/resizeBlock.js";
 
+const mode = localStorage.getItem("mode")
 const appMarginLeft = document.getElementById("app").getBoundingClientRect().left
+const bestScore = localStorage.getItem(`bestScore${mode}`)? parseInt(localStorage.getItem(`bestScore${mode}`)): 0
 const testBtn = document.getElementById("btn")
 const parentTest = document.getElementById("game_region")
 
@@ -20,7 +22,12 @@ testBtn.addEventListener('click', ()=>{
 let game = async()=>{
 	let isGameOver = await gameLoop()
 	if (isGameOver){
-		console.log("done")
+		localStorage.setItem("lastScore", counter - 2)
+		if (bestScore < counter-2){
+			localStorage.setItem(`bestScore${mode}`, counter -2)
+		}
+		await new Promise(resolve=>{setTimeout(resolve, 1000)})
+		window.open("../view/result.html", "self")
 	}else{
 		game()
 	}

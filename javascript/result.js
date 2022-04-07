@@ -4,9 +4,9 @@ const $faceTryAgain = [...document.getElementsByClassName("result_try-again")]
 const $faceMode = [...document.getElementsByClassName("result_mode")]
 const $faceScore = [...document.getElementsByClassName("result_score")]
 
-const bestScore = localStorage.getItem("bestScore")
-const lastScore = localStorage.getItem("lastScore")
 const mode = localStorage.getItem("mode")
+const bestScore = localStorage.getItem(`bestScore${mode}`)
+const lastScore = localStorage.getItem("lastScore")
 
 $resultLastScore.innerText = lastScore
 if (bestScore === lastScore){
@@ -16,10 +16,10 @@ if (bestScore === lastScore){
 }
 
 $faceMode.forEach(face =>{
-	face.children[0].innerText = mode
+	face.children[0].innerText = `mode: ${mode}`
 })
 $faceScore.forEach(face =>{
-	face.children[0].innerText = lastScore
+	face.children[0].innerText = `Your score: ${lastScore}`
 })
 
 $faceTryAgain.forEach(face =>{
