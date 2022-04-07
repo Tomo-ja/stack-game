@@ -39,7 +39,7 @@ let game = async()=>{
 			localStorage.setItem(`bestScore${mode}`, counter -2)
 		}
 		await new Promise(resolve=>{setTimeout(resolve, 500)})
-		window.open("../view/result.html", "_self")
+		window.open("https://tomo-ja.github.io/stack-game/view/result.html", "_self")
 	}else{
 		game()
 	}
