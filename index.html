@@ -9,27 +9,34 @@
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/basic.css">
 	<link rel="stylesheet" href="./css/staticPage.css">
+
+	<!-- google fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+	
+	
 </head>
 <body>
-	<div class="app">
+	<div class="app index">
 		<div class="header">
-			<img class= "icon-image header_question-mark" src="./images/icon_info_question.svg" alt="">
-			<div class="info">
-				<div class="info_close">
+			<img id="into_modal_open-btn" class= "icon-image header_question-mark" src="./images/icon_info_question.svg" alt="">
+			<div id="info_modal" class="info">
+				<div id="info_modal_close-btn" class="info_close">
 					<img class="icon-image info_close_icon" src="./images/icon_info_xmark.svg" alt="">
 				</div>
 				<h2 class="info_title">how to play</h2>
 				<div class="info_section info_success">
 					<div class="info_section_images">
-						<img src="./images/img_info_stacked.png" alt="">
-						<img src="./images/img_info_finger.png" alt="">
+						<img class="info_section_images_item" src="./images/img_info_stacked.png" alt="">
+						<img class="info_section_images_item info_section_images_finger" src="./images/img_info_finger.png" alt="">
 					</div>
 					<p>tap to stack</p>
 				</div>
 				<div class="info_section info_fail">
 					<div class="info_section_images">
-						<img src="./images/img_info_unstacked.png" alt="">
-						<img src="./images/img_info_finger.png" alt="">
+						<img class="info_section_images_item" src="./images/img_info_unstacked.png" alt="">
+						<img class="info_section_images_item info_section_images_finger" src="./images/img_info_finger.png" alt="">
 					</div>
 					<p>too early / too late</p>
 					<p>= game over</p>
@@ -37,29 +44,30 @@
 			</div>
 		</div>
 		<main class="main">
-			<h1>stack</h1>
-			<h2>tap to start</h2>
+			<h1 class="main_title">stack</h1>
+			<h2 class="main_instruction">choose mode</h2>
 			<div class="box">
 				<div class="box_face box_face-top">
-					<div class="box_face_text">easy</div>
+					<p class="box_face_text">easy</p>
 				</div>
 				<div class="box_face box_face-bottom">
-					<div class="box_face_text">easy</div>
+					<p class="box_face_text">easy</p>
 				</div>
 				<div class="box_face box_face-front">
-					<div class="box_face_text">normal</div>
+					<p class="box_face_text">normal</p>
 				</div>
 				<div class="box_face box_face-back">
-					<div class="box_face_text">normal</div>
+					<p class="box_face_text">normal</p>
 				</div>
 				<div class="box_face box_face-left">
-					<div class="box_face_text">hard</div>
+					<p class="box_face_text">hard</p>
 				</div>
 				<div class="box_face box_face-right">
-					<div class="box_face_text">hard</div>
+					<p class="box_face_text">hard</p>
 				</div>
 			</div>
 		</main>
 	</div>
+	<script src="./javascript/index.js"></script>
 </body>
 </html>

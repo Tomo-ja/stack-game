@@ -1,33 +1,88 @@
-.icon-image {
+.index {
+  background-image: linear-gradient(
+    300deg,
+    rgba(144, 245, 154, 1),
+    rgba(4, 202, 255, 1)
+  );
 }
-
+.icon-image {
+  width: 50px;
+  height: 50px;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(150deg)
+    brightness(106%) contrast(101%);
+}
 .header {
+  position: relative;
+  padding: 30px;
 }
 .header_question-mark {
 }
 .info {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 550px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: black;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 10;
+  display: none;
 }
 .info_close {
+  position: absolute;
+  top: -25px;
+  left: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: rgb(255, 35, 35);
+  border-radius: 50%;
 }
 .info_close_icon {
 }
 .info_title {
 }
 .info_section {
+  width: 75%;
+  margin: 30px auto;
+  padding-top: 10px;
+  border-top: solid 3px white;
 }
 .info_success {
 }
 .info_section_images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+.info_section_images_item {
+  height: 200px;
+  object-fit: contain;
+}
+.info_section_images_finger {
+  height: 120px;
+  object-fit: contain;
 }
 .info_fail {
 }
 
 .main {
+  text-align: center;
   perspective: 500px;
+}
+.main_title {
+  margin-bottom: 20px;
+}
+.main_instruction {
 }
 .box {
   width: 200px;
   height: 200px;
+  margin: 125px auto;
   transform-style: preserve-3d;
   animation: turnInfinite 10s linear 0s infinite normal none running;
 }
@@ -41,10 +96,13 @@
 }
 .box_face {
   position: absolute;
-  width: 198px;
-  height: 198px;
-  background-color: rgba(100, 100, 100, 0.7);
-  border: 0.5px solid black;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(50, 50, 50, 0.7);
+  border: 1px solid black;
   cursor: pointer;
 }
 .box_face:hover {
@@ -53,11 +111,6 @@
 
 .box_face_text {
   display: inline-block;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  font-size: 40px;
   color: white;
 }
 .box_face:hover > .box_face_text {

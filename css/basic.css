@@ -3,9 +3,27 @@
 }
 body {
   background-color: black;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
 }
 .app {
   width: 650px;
   height: 100vh;
   margin: 0 auto;
+}
+h1 {
+  font-size: 120px;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+p {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+img {
+  display: block;
 }
