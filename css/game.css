@@ -1,8 +1,24 @@
-#game_region {
+.game_field {
   width: 100%;
   height: 100%;
-  background-image: url(../images/bg_game_ground-to-sky.jpeg);
-  background-size: 120% 300%;
+  /* background-image: url(../images/bg_game_ground-to-sky.jpeg); */
+  background-image: linear-gradient(
+    to top,
+    #fcc5e4 0%,
+    #fda34b 7%,
+    #ff7882 17%,
+    #c8699e 25%,
+    #7046aa 34%,
+    #0c1db8 41%,
+    #020f75 50%,
+    #0c1db8 59%,
+    #7046aa 66%,
+    #c8699e 74%,
+    #ff7882 83%,
+    #fda34b 93%,
+    #fcc5e4 100%
+  );
+  background-size: 100% 400%;
   background-position: left 0 bottom 0;
   padding-top: 400px;
   padding-bottom: 280px;
@@ -11,14 +27,14 @@
 }
 
 .box {
-  width: 60px;
+  width: 200px;
   height: 40px;
-  background-color: black;
+  background-color: white;
   opacity: 1;
   position: relative;
 }
 .box-init {
-  width: 60px;
+  width: 200px;
   height: 40px;
-  left: 295px;
+  left: 225px;
 }
