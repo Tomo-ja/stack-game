@@ -24,6 +24,6 @@ $faceScore.forEach(face =>{
 
 $faceTryAgain.forEach(face =>{
 	face.addEventListener("click", ()=>{
-		window.open('../../index.html', '_self')
+		window.open('../index.html', '_self')
 	})
 })
