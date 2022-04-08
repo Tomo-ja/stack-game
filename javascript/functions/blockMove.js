@@ -34,7 +34,7 @@ export default async function blockMove(box, speed=0){
 		if( !e ) {
 			e = window.event;
 		}
-		if( e.keyCode == 83 ) {
+		if( e.keyCode == 33 ) {
 			keyPressed = true;
 		}
 	}
