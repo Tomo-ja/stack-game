@@ -23,7 +23,7 @@
   );
   background-size: 100% 400%;
   background-position: left 0 bottom 0;
-  padding-top: 50%;
+  padding-top: 50vh;
   padding-bottom: 280px;
   overflow: hidden;
   transition: 0.5s;
